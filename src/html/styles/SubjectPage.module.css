@@ -1,0 +1,36 @@
+.html {
+    width: 780px;
+    height: 460px;
+    overflow: auto;
+}
+
+.container {
+    padding: 32px
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.grid_container {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+}
+
+.button {
+    padding: 16px 32px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
