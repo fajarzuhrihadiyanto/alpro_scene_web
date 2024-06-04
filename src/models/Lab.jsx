@@ -41,6 +41,7 @@ const Lab = (props) => {
   React.useEffect(() => {
     if (controls.current) {
       if (focusTarget !== null) {
+        controls.current.enableRotate = false
 
         // animate camera to focus target
         gsap.to(controls.current.target, {duration: 1, ease: 'power4.inOut', x: controlsTarget[0], y: controlsTarget[1], z: controlsTarget[2]})
