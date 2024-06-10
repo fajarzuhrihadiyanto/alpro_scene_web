@@ -7,6 +7,7 @@ import WorkingArea from "./components/WorkingArea"
 import { FOCUS_FACILITIES } from "../constants"
 import Tooltip from "../components/Tootlip"
 import FacilitiesPage from "../html/FacilitiesPage"
+import { useResponsiveScreen } from "../utils"
 
 const FacilitiesArea = ({ nodes, materials }) => {
     // get the state and setter from the store
@@ -14,6 +15,7 @@ const FacilitiesArea = ({ nodes, materials }) => {
     const setFocusTarget = useMainStore.useSetFocusTarget()
     const setCameraPosition = useMainStore.useSetCameraPosition()
     const setControlsTargetOffset = useMainStore.useSetControlsTargetOffset()
+    const {isMobile} = useResponsiveScreen()
 
     const [isHovered, setIsHovered] = React.useState(false)
 
@@ -29,9 +31,10 @@ const FacilitiesArea = ({ nodes, materials }) => {
     const onClick = React.useCallback((e) => {
         e.stopPropagation()
         if (focusTarget === null) {
+            const cameraPosition = isMobile ? [-3, .95, .724] : [-2.551, .95, .724]
             setIsHovered(false)
             setFocusTarget(FOCUS_FACILITIES)
-            setCameraPosition([-2.551, .95, .724])
+            setCameraPosition(cameraPosition)
             setControlsTargetOffset([0.01, 0, 0])
         }
     }, [focusTarget])

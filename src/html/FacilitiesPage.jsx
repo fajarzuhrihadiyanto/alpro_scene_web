@@ -12,6 +12,7 @@ const FacilitiesPage = () => {
             className={styles.html}
             >
             <div className={styles.container}>
+                <h1 className={styles.title}>Fasilitas</h1>
                 <ul className={styles.list}>
                 <li>PC Client (Processor Intel Core i7 Gen 12, RAM 32GB, SSD 1TB).</li>
                 <li>Semua monitor berukuran 24″ untuk memudahkan mahasiswa dalam melakukan kegiatan pemrograman.</li>
